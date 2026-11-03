@@ -1,0 +1,28 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+<BaseLayout
+  title="DonationValues"
+  description="An open dataset of fair-market values for donated used clothing and household items, built from observed US thrift prices and published as frozen tax-year editions."
+>
+  <h1>DonationValues</h1>
+  <p class="lead">
+    DonationValues is an open dataset of fair-market values for donated used clothing and household items,
+    built from prices observed on US thrift and consignment store shelves. Each value is a statistic over
+    observations you can inspect, computed by a published methodology and frozen in a tax-year edition with
+    a hash and a DOI.
+  </p>
+
+  <div class="callout" role="status">
+    <p><strong>Status: pre-release, no edition published.</strong> The methodology is an open draft and the
+    data tables are empty. Nothing on this site is tax advice.</p>
+  </div>
+
+  <ul class="link-list">
+    <li><a href="/methodology">Methodology</a>: how values will be collected, computed and versioned.</li>
+    <li><a href="/download">Download</a>: how editions will be published, and what exists today.</li>
+    <li><a href="/contribute">Contribute</a>: price observations, taxonomy, methodology comments and code.</li>
+  </ul>
+
+  <p>Sponsored and maintained by Foothill AI LLC; see <a href="/governance">Governance</a>.</p>
+</BaseLayout>

@@ -1,0 +1,130 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+<BaseLayout
+  title="IRS primer"
+  description="A short primer on the US tax rules for donated clothing and household items: fair market value, good used condition, substantiation tiers, Form 8283 and the 2026 changes."
+>
+  <h1>IRS primer</h1>
+  <p class="lead">
+    The rules that govern a deduction for donated clothing and household items, in plain language, with the
+    sources. Read the IRS publications themselves before relying on any of it.
+  </p>
+
+  <h2>Fair market value</h2>
+  <p>
+    The deduction for donated property is based on its fair market value (FMV). Treas. Reg. section 1.170A-1(c)(2)
+    defines FMV as the price at which the property would change hands between a willing buyer and a willing seller,
+    neither being under any compulsion to buy or sell and both having reasonable knowledge of the relevant facts.
+  </p>
+  <p>
+    IRS Publication 561, <em>Determining the Value of Donated Property</em>, applies that test to used clothing and
+    household items. It says the price that buyers of used items actually pay in used clothing stores, such as
+    consignment or thrift shops, is an indication of the value, and that the valuation of used clothing "does not
+    lend itself to fixed formulas or methods." Publication 561 also ranks the evidence: the item's own sale price,
+    then comparable sales in the same market, then price guides, which are treated as clues that should be
+    supported by other evidence. If you use a price guide, use the edition current at the date of the contribution.
+  </p>
+  <p>
+    Publication 526, <em>Charitable Contributions</em>, adds that formulas such as a percentage of the cost of a new
+    replacement item are not acceptable for valuing household items.
+  </p>
+
+  <h2>"Good used condition or better"</h2>
+  <p>
+    No deduction is allowed for clothing or a household item unless it is in good used condition or better (Internal
+    Revenue Code section 170(f)(16), described in Publication 526). The one exception is a single item for which you
+    claim more than $500: that item may be deducted regardless of condition only if you obtain a qualified appraisal
+    and attach Form 8283 with Section B completed. "Household items" include furniture, furnishings, electronics,
+    appliances and linens, but not food, art, antiques, jewelry, gems or collections.
+  </p>
+
+  <h2>Substantiation tiers</h2>
+  <p>The record-keeping requirements are cumulative. Each tier adds to the ones below it.</p>
+  <table>
+    <thead>
+      <tr><th>Amount</th><th>What you need</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Any amount under $250</td>
+        <td>A receipt from the organization showing its name, the date and location, and a description of the
+        property, plus your own written records of the item's condition, how you acquired it and how you figured its
+        FMV. A receipt is not required only where getting one is impractical, such as an unattended drop site.</td>
+      </tr>
+      <tr>
+        <td>$250 or more per contribution</td>
+        <td>A contemporaneous written acknowledgment from the organization describing the property and stating
+        whether you received any goods or services in return.</td>
+      </tr>
+      <tr>
+        <td>More than $500 in total noncash gifts for the year</td>
+        <td>Form 8283, Section A, filed with your return, including how and when you acquired each item and its cost
+        basis.</td>
+      </tr>
+      <tr>
+        <td>More than $5,000 for one item or a group of similar items</td>
+        <td>A qualified appraisal by a qualified appraiser and Form 8283, Section B, signed by the appraiser and the
+        organization.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>
+    <strong>Similar items are aggregated.</strong> The $5,000 threshold applies to the total of all similar items
+    (for example, all clothing, or all furniture) you donate during the year, added up across every organization you
+    gave to. Many separate trips do not avoid it. The Tax Court has disallowed entire clothing deductions where the
+    aggregate exceeded $5,000 and no appraisal was obtained.
+  </p>
+
+  <h2>Form 8283 and "Thrift shop value"</h2>
+  <p>
+    Form 8283, Section A, asks in column (i) for the method used to determine FMV. The instructions list "Thrift
+    shop value" as an acceptable entry for used clothing and household items. Treas. Reg. section 1.170A-13 also
+    requires your records to show the method used in determining fair market value, which is why a value with its
+    source, date, market and sample size behind it is more useful than a bare number.
+  </p>
+
+  <h2>Penalties for overvaluation</h2>
+  <p>
+    If the value claimed is 150% or more of the correct value, an accuracy-related penalty of 20% can apply to the
+    resulting underpayment; at 200% or more the penalty rises to 40%. These valuation penalties apply only when the
+    underpayment attributable to the misstatement exceeds $5,000. For charitable property, the reasonable-cause
+    defense generally requires a qualified appraisal and a good-faith investigation of the value. A price guide is
+    evidence of a good-faith investigation, not a safe harbor.
+  </p>
+
+  <h2>Changes for tax year 2026</h2>
+  <p>
+    The 2025 budget reconciliation act, commonly called the One Big Beautiful Bill Act (OBBBA), changed two things
+    for charitable deductions beginning in tax year 2026:
+  </p>
+  <ul>
+    <li>Itemizers may deduct charitable contributions only to the extent they exceed 0.5% of adjusted gross income.</li>
+    <li>Taxpayers who do not itemize may claim a new deduction for charitable contributions, but it applies to cash
+    contributions only. Donated clothing and household items do not qualify for it.</li>
+  </ul>
+  <p>
+    The practical effect is that noncash donations matter only to itemizers, and donors who bunch several years of
+    giving into one year are more likely to cross the $5,000 similar-items threshold that requires an appraisal.
+  </p>
+
+  <h2>What this dataset is not</h2>
+  <p>
+    DonationValues publishes statistics over observed thrift prices. It is not an appraisal of any particular item,
+    it does not know the condition of your item, and it does not replace the receipts, acknowledgments and forms
+    listed above. Under IRS rules the donor determines fair market value.
+  </p>
+
+  <div class="callout">
+    <p><strong>This is not tax advice.</strong> Consult a tax professional about your own situation.</p>
+  </div>
+
+  <h2>Sources</h2>
+  <ul>
+    <li><a href="https://www.irs.gov/publications/p561">IRS Publication 561, Determining the Value of Donated Property</a></li>
+    <li><a href="https://www.irs.gov/publications/p526">IRS Publication 526, Charitable Contributions</a></li>
+    <li><a href="https://www.irs.gov/forms-pubs/about-form-8283">IRS Form 8283, Noncash Charitable Contributions</a> and its <a href="https://www.irs.gov/instructions/i8283">instructions</a></li>
+    <li><a href="https://www.law.cornell.edu/cfr/text/26/1.170A-1">26 CFR 1.170A-1</a> and <a href="https://www.law.cornell.edu/cfr/text/26/1.170A-13">26 CFR 1.170A-13</a></li>
+    <li><a href="https://www.law.cornell.edu/uscode/text/26/170">26 U.S.C. 170</a>, <a href="https://www.law.cornell.edu/uscode/text/26/6662">6662</a> and <a href="https://www.law.cornell.edu/uscode/text/26/6664">6664</a></li>
+  </ul>
+</BaseLayout>

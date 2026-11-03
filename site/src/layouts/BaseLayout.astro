@@ -1,0 +1,72 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description: string;
+  /** Set for pages that must not be indexed (the 404 page). */
+  noindex?: boolean;
+}
+
+const { title, description, noindex = false } = Astro.props;
+const siteName = 'DonationValues';
+const fullTitle = title === siteName ? siteName : `${title} | ${siteName}`;
+const canonical = new URL(Astro.url.pathname, Astro.site);
+const currentPath = Astro.url.pathname.replace(/\/$/, '') || '/';
+
+const nav = [
+  { href: '/methodology', label: 'Methodology' },
+  { href: '/irs-primer', label: 'IRS primer' },
+  { href: '/download', label: 'Download' },
+  { href: '/contribute', label: 'Contribute' },
+  { href: '/governance', label: 'Governance' },
+  { href: '/about', label: 'About' },
+];
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical.href} />
+    {noindex ? <meta name="robots" content="noindex" /> : <meta name="robots" content="index, follow" />}
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <meta property="og:site_name" content={siteName} />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical.href} />
+    <meta property="og:type" content="website" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="wrap">
+        <a class="site-name" href="/">{siteName}</a>
+        <nav aria-label="Main">
+          <ul class="site-nav">
+            {nav.map((item) => (
+              <li>
+                <a href={item.href} aria-current={currentPath === item.href ? 'page' : undefined}>{item.label}</a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main class="wrap">
+      <slot />
+    </main>
+    <footer class="site-footer">
+      <div class="wrap">
+        <p>Code Apache-2.0 · Docs CC BY 4.0 · Data CC0</p>
+        <p>
+          <a href="https://github.com/donationvalues/donationvalues">GitHub</a> ·
+          <a href="mailto:hello@donationvalues.org">hello@donationvalues.org</a> ·
+          <a href="/legal">Legal</a>
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>

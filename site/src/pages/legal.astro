@@ -1,0 +1,73 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+const repo = 'https://github.com/donationvalues/donationvalues';
+---
+<BaseLayout
+  title="Legal"
+  description="Licenses, disclaimer, trademark and nominative-use notice, and legal contact for DonationValues."
+>
+  <h1>Legal</h1>
+
+  <h2>Licenses</h2>
+  <table>
+    <thead>
+      <tr><th>Layer</th><th>License</th><th>File</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Code (pipeline, site, tooling)</td>
+        <td>Apache License 2.0</td>
+        <td><a href={`${repo}/blob/main/LICENSE`}><code>LICENSE</code></a></td>
+      </tr>
+      <tr>
+        <td>Methodology and documentation, including this site's text</td>
+        <td>Creative Commons Attribution 4.0 International (CC BY 4.0)</td>
+        <td><a href={`${repo}/blob/main/LICENSE-DOCS`}><code>LICENSE-DOCS</code></a></td>
+      </tr>
+      <tr>
+        <td>Taxonomy, observations and derived values</td>
+        <td>CC0 1.0 Universal public domain dedication, with an attribution request that is not a condition</td>
+        <td><a href={`${repo}/blob/main/LICENSE-DATA`}><code>LICENSE-DATA</code></a></td>
+      </tr>
+    </tbody>
+  </table>
+  <p>
+    If you use the data, please credit "DonationValues.org, edition &lt;id&gt;" and link to
+    https://donationvalues.org. Organizations whose policies cannot accept a public-domain dedication may request
+    the same data under the Community Data License Agreement, Permissive, Version 2.0. The data license will never
+    become more restrictive; see <a href="/governance">Governance</a>.
+  </p>
+
+  <h2>Disclaimer</h2>
+  <p>
+    DonationValues publishes estimates of typical resale prices derived from observed thrift prices using the
+    published methodology. They are not appraisals and not tax advice. Under IRS rules the donor determines fair
+    market value. Items worth more than $500 and groups of similar items worth more than $5,000 carry additional
+    substantiation and appraisal requirements. The data is provided as-is, without warranty.
+  </p>
+
+  <h2>Trademark and third-party names</h2>
+  <p>
+    "DonationValues" and the DonationValues logo are trademarks of the project sponsor and are not covered by the
+    data dedication. You may say that your product uses DonationValues data; you may not imply that the project
+    endorses your product.
+  </p>
+  <p>
+    Third-party names that appear in the data and documentation, for example Goodwill, Savers, Value Village,
+    The Salvation Army, St. Vincent de Paul and eBay, identify the source of an observation only. Those organizations
+    do not sponsor or endorse this project, and the project does not claim any affiliation with them. ItsDeductible
+    is a trademark of Intuit Inc.; it is mentioned only to describe the context in which this project was started.
+  </p>
+
+  <h2>Removal and takedown</h2>
+  <p>
+    The removal and takedown policy, including personal-data removal and DMCA notices, is in
+    <a href="/contribute">Contribute</a>. All removals from published data are logged publicly in the repository.
+  </p>
+
+  <h2>Contact</h2>
+  <p>
+    Legal questions and notices: <a href="mailto:legal@donationvalues.org">legal@donationvalues.org</a>.
+    General questions: <a href="mailto:hello@donationvalues.org">hello@donationvalues.org</a>.
+  </p>
+</BaseLayout>

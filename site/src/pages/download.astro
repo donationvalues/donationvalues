@@ -1,0 +1,56 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+const repo = 'https://github.com/donationvalues/donationvalues';
+---
+<BaseLayout
+  title="Download"
+  description="How DonationValues editions will be published: GitHub Releases with CSV, JSONL, Parquet and SQLite files, SHA-256 checksums and a Zenodo DOI. No edition exists yet."
+>
+  <h1>Download</h1>
+
+  <div class="callout" role="status">
+    <p><strong>No edition has been published yet.</strong> There is nothing to download at this time. This page
+    describes how editions will be distributed once the first one exists.</p>
+  </div>
+
+  <h2>How editions will be published</h2>
+  <p>
+    Each tax-year edition, named <code>DV-&lt;taxyear&gt;</code>, will be published as a
+    <a href={`${repo}/releases`}>GitHub Release</a> and never modified afterwards. Corrections ship as a new patch
+    edition (<code>DV-&lt;taxyear&gt;.&lt;n&gt;</code>) that may add specifications or regions but never changes an
+    existing value.
+  </p>
+  <p>Every release will contain the same three tables (items, observations, values) in several formats:</p>
+  <ul>
+    <li>CSV, with a Frictionless <code>datapackage.json</code> describing the columns</li>
+    <li>JSONL, one record per line</li>
+    <li>Parquet</li>
+    <li>SQLite, a single file holding all three tables</li>
+  </ul>
+  <p>
+    Alongside the data files: a <code>SHA256SUMS</code> file with a checksum for every artifact and an edition hash
+    computed over the canonicalized CSVs, a datasheet, and a changelog listing every value that changed since the
+    previous edition with a reason code.
+  </p>
+
+  <h2>Persistent identifiers</h2>
+  <p>
+    Each release will mint a version DOI on Zenodo, with a concept DOI covering all versions recorded in the
+    repository's <a href={`${repo}/blob/main/CITATION.cff`}><code>CITATION.cff</code></a>. Cite the specific
+    edition you used, for example "DonationValues.org, edition DV-2027", and include the edition hash where you can.
+  </p>
+
+  <h2>Schema</h2>
+  <p>
+    The column definitions are Frictionless Table Schemas in the
+    <a href={`${repo}/tree/main/schema`}><code>schema/</code></a> folder of the repository. The schema is
+    versioned separately from the methodology; breaking changes bump its major version and are announced with a
+    methodology comment period.
+  </p>
+
+  <h2>License</h2>
+  <p>
+    Data is dedicated to the public domain under CC0 1.0 with an attribution request. See
+    <a href="/legal">Legal</a> for the full license stack.
+  </p>
+</BaseLayout>

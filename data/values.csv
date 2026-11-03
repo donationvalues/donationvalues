@@ -1,0 +1,1 @@
+edition,dv_id,region,tier,value_cents,value_raw_cents,p10,p25,p50,p75,p90,mode_cents,n_obs,n_stores,n_metros,ci95_low,ci95_high,window_start,window_end,regional_index,inherited_from,markdown_share,method_version,observations_hash,change_reason

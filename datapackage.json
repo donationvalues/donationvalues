@@ -1,0 +1,15 @@
+{
+  "$schema": "https://datapackage.org/profiles/2.0/datapackage.json",
+  "name": "donationvalues",
+  "title": "DonationValues working tables",
+  "version": "0.1.0",
+  "description": "Open dataset of observed US thrift and consignment shelf prices for donated used clothing and household items, with the taxonomy and derived values. Pre-release: tables are header-only.",
+  "homepage": "https://donationvalues.org",
+  "licenses": [{"name": "CC0-1.0", "path": "https://creativecommons.org/publicdomain/zero/1.0/", "title": "CC0 1.0 Universal"}],
+  "contributors": [{"title": "DonationValues contributors", "roles": ["author"]}, {"title": "Foothill AI LLC", "path": "https://foothill.ai", "roles": ["publisher"]}],
+  "resources": [
+    {"name": "items", "path": "data/items.csv", "format": "csv", "mediatype": "text/csv", "encoding": "utf-8", "schema": "schema/items.schema.json"},
+    {"name": "observations", "path": "data/observations.csv", "format": "csv", "mediatype": "text/csv", "encoding": "utf-8", "schema": "schema/observations.schema.json"},
+    {"name": "values", "path": "data/values.csv", "format": "csv", "mediatype": "text/csv", "encoding": "utf-8", "schema": "schema/values.schema.json"}
+  ]
+}

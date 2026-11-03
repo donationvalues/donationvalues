@@ -1,0 +1,15 @@
+cff-version: 1.2.0
+title: DonationValues
+message: "If you use this dataset, please cite the specific edition (DV-<taxyear>) and its DOI once minted."
+type: dataset
+authors:
+  - name: DonationValues contributors
+  - name: Foothill AI LLC
+    website: https://foothill.ai
+url: https://donationvalues.org
+repository-code: https://github.com/foothill-ai/donationvalues
+license: CC0-1.0
+abstract: >-
+  An independently maintained, publicly documented dataset of typical US thrift
+  and consignment shelf prices for donated used clothing and household items,
+  published as immutable tax-year editions with per-value provenance.

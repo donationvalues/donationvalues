@@ -1,0 +1,28 @@
+{
+  "$schema": "https://datapackage.org/profiles/2.0/tableschema.json",
+  "name": "items",
+  "title": "DonationValues taxonomy (item specifications)",
+  "description": "One row per item specification. dv_id values are stable forever: never reused or renamed. Retired specs keep their row with status=retired and superseded_by set.",
+  "fields": [
+    {"name": "dv_id", "type": "string", "description": "Stable identifier, e.g. dv:clothing.mens.shirt.dress", "constraints": {"required": true, "unique": true, "pattern": "^dv:[a-z0-9]+(\\.[a-z0-9_]+)+$"}},
+    {"name": "label", "type": "string", "description": "Donor-facing name", "constraints": {"required": true}},
+    {"name": "irs_group", "type": "string", "description": "IRS 'similar items' group for the $5,000 aggregation test", "constraints": {"required": true, "enum": ["clothing", "furniture", "household_items", "electronics", "appliances", "books", "toys", "kitchenware", "linens", "sporting_goods", "other"]}},
+    {"name": "excluded_from_household", "type": "boolean", "description": "True for jewelry, art, collections and similar categories that Pub 526 excludes from the household-items rule", "constraints": {"required": true}},
+    {"name": "category", "type": "string", "description": "Project taxonomy level 1", "constraints": {"required": true}},
+    {"name": "subcategory", "type": "string", "description": "Project taxonomy level 2; the text before the colon in DeductIt's Browse convention", "constraints": {"required": true}},
+    {"name": "item_type", "type": "string", "description": "Project taxonomy level 3"},
+    {"name": "gender_age", "type": "string", "constraints": {"required": true, "enum": ["mens", "womens", "boys", "girls", "toddler", "infant", "maternity", "unisex", "n/a"]}},
+    {"name": "parent_id", "type": "string", "description": "dv_id of the parent spec used for value inheritance when minimum sample rules are not met"},
+    {"name": "google_product_taxonomy_id", "type": "integer", "description": "Primary crosswalk id"},
+    {"name": "gpc_brick", "type": "string", "description": "Optional GS1 GPC brick code"},
+    {"name": "schema_item_condition", "type": "string", "description": "Schema.org ItemCondition mapping, normally UsedCondition"},
+    {"name": "synonyms", "type": "string", "description": "Pipe-separated search aliases; LLM-proposed, human-approved"},
+    {"name": "checklist", "type": "string", "description": "Attributes a collector must record for this spec", "constraints": {"required": true}},
+    {"name": "status", "type": "string", "constraints": {"required": true, "enum": ["active", "retired"]}},
+    {"name": "superseded_by", "type": "string", "description": "dv_id that replaces a retired spec"},
+    {"name": "introduced_in", "type": "string", "description": "Edition in which the spec first appeared, e.g. DV-2027"},
+    {"name": "notes", "type": "string"}
+  ],
+  "primaryKey": ["dv_id"],
+  "missingValues": [""]
+}

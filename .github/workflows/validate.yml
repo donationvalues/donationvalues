@@ -1,0 +1,20 @@
+name: Validate data package
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install frictionless
+        run: pip install "frictionless==5.18.1"
+      - name: Validate datapackage.json
+        run: frictionless validate datapackage.json
+      - name: Check JSON files parse
+        run: python -I -c "import json,glob; [json.load(open(p)) for p in glob.glob('schema/*.json')+['datapackage.json']]; print('json ok')"

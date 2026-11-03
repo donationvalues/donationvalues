@@ -7,7 +7,7 @@ authors:
   - name: Foothill AI LLC
     website: https://foothill.ai
 url: https://donationvalues.org
-repository-code: https://github.com/foothill-ai/donationvalues
+repository-code: https://github.com/donationvalues/donationvalues
 license: CC0-1.0
 abstract: >-
   An independently maintained, publicly documented dataset of typical US thrift
